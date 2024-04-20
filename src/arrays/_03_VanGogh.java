@@ -57,7 +57,12 @@ public class _03_VanGogh extends PApplet {
     Brush brush;
     
     void initializePaintings() {
-        
+       PImage[] paintbrushCursor = new PImage [4];
+       
+       paintbrushCursor[0] = loadImage("starryNight.jpg");
+       paintbrushCursor[1] = loadImage("strawHatPortrait.jpg");
+       paintbrushCursor[2] = loadImage("wheatField.jpg");
+       paintbrushCursor[3] = loadImage("painterOnRoad.jpg");
     }
     
     void selectNextPainting() {
