@@ -37,11 +37,11 @@ public class MIDIKeyboard implements KeyListener{
 		noteLabel.setHorizontalAlignment(JLabel.CENTER);
 		JFrame frame = new JFrame();
 		// 1. Set the default close operation of your JFrame to JFrame.EXIT_ON_CLOSE
-
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// 2. Add a key listener to your JFrame
-
+		frame.addKeyListener(this);
 		// 3. Set your frame to be visible
-
+		frame.setVisible(true);
 		frame.add(noteLabel);
 		frame.setPreferredSize(new Dimension(500,500));
 		frame.pack();
