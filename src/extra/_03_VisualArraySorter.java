@@ -23,7 +23,7 @@ import processing.core.PApplet;
  * 6. Set the background color with background(r, g, b);
  * 
  * 7. Set the color for your graph using the fill() method
- * 
+ * 	
  * 8. Draw a rectangle for each int in your array.
  *    the x value will be the loop variable multiplied by (width/intArray.length)
  *    the y value will the height variable
@@ -50,12 +50,10 @@ public class _03_VisualArraySorter extends PApplet {
     @Override
     public void setup() {
         number = new int [50];
+        frameRate(10);
         for(int i =0; i<number.length; i++) {
         	int n = (int)random(height);
         	number[i] = n;
-        	noStroke();
-        	rect(i*(width/number.length),height,width/number.length,-number[i]);
-        	stepSort(number);
         }
         if (mousePressed == true) {
         	randomizer();
@@ -66,11 +64,20 @@ public class _03_VisualArraySorter extends PApplet {
     public void draw() {
     	background(247, 213, 77);
     	fill(66, 176, 255);
+    	
+    	for(int i =0; i<number.length; i++) {
+         	noStroke();
+         	rect(i*(width/number.length),height,width/number.length,-number[i]);
+         	stepSort(number);
+    	}
         
     }
     
     void randomizer() {
-    	int n = (int)random(height);
+    	  for(int i =0; i<number.length; i++) {
+          	int n = (int)random(height);
+          	number[i] = n;
+    	  }
     }
 
     static public void main(String[] passedArgs) {
